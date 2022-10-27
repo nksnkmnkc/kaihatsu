@@ -11,3 +11,4 @@ environment.plugins.prepend(
 )
 
 module.exports = environment
+
