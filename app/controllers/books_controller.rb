@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
- before_action :correct_user!
+ before_action :authenticate_user!
  before_action :ensure_correct_user, only: [:edit, :update]
 
   def new
