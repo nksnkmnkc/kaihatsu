@@ -44,4 +44,19 @@ class User < ApplicationRecord
    followings.include?(user)
   end
 
+  # 検索方法分岐        完全一致以外の検索方法は、#{word}の前後(もしくは両方に)、__%__を追記することで定義することができる。 where(カラム名: "検索したい文字列")
+  def self.looks(search,word)
+    if search == "perfect_match"
+      @user = User.where("name LIKE?", "#{word}")
+    elsif search == "forward_match"
+      @user = User.where("name LIKE?", "#{word}%")
+    elsif search == "backward_match"
+      @user = User.where("name LIKE?", "%#{word}")
+    elsif search == "partial_match"
+      @user = User.where("name LIKE?", "%#{word}%")
+    else
+      @user = User.all
+    end
+  end
+
 end
