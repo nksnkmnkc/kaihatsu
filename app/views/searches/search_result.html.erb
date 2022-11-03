@@ -1,8 +1,0 @@
-<h2>Books search for "test"</h2>
-  <!--検索対象モデルがUserの時 -->
-  <% if @range == "User" %>
-   <%= render 'users/index', users: @users %>
-  <% else %>
-    <!--検索対象モデルがUserではない時(= 検索対象モデルがBookの時) -->
-   <%= render 'books/index', books: @books %>
-  <% end %>

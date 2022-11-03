@@ -1,0 +1,9 @@
+  <!--検索対象モデルがuserの時 -->
+  <% if @model == "user" %>
+   <h3>Users search for "<%= @content %>"</h3>
+   <%= render 'users/index', users: @records %>
+  <% else %>
+    <!--検索対象モデルがuserではない時(= 検索対象モデルがbookの時) -->
+   <h3>Books search for "<%= @content %>"</h3>
+   <%= render 'books/index', books: @records %>
+  <% end %>
