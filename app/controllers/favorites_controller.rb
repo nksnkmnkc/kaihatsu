@@ -4,13 +4,15 @@ class FavoritesController < ApplicationController
    @book = Book.find(params[:book_id])
    favorite = current_user.favorites.new(book_id: @book.id)
    favorite.save
-   redirect_back(fallback_location: root_path)
  end
 
  def destroy
    @book = Book.find(params[:book_id])
    favorite =current_user.favorites.find_by(book_id: @book.id)
    favorite.destroy
-   redirect_back(fallback_location: root_path)
  end
 end
+
+# redirect_back(fallback_location: root_path)→削除
+#リダイレクト先を削除→リダイレクト先がない、かつJavaScriptリクエストという状況になる
+# →createアクション実行後は、create.js.erbファイルを、destroyアクション実行後はdestroy.js.erbファイルを探すようになる。
