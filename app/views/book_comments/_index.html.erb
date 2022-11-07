@@ -8,9 +8,13 @@
        <p><%= book_comment.comment %></p>
        <p>
           <% if book_comment.user == current_user %>
-            <%= link_to "Destroy", book_book_comment_path(book_comment.book, book_comment), method: :delete, class: "btn btn-danger pull-right" %>
+            <%= link_to "Destroy", book_book_comment_path(book_comment.book, book_comment), method: :delete, remote: true, class: "btn btn-danger pull-right" %>
+            <!-- remote: trueを追加→HTMLリクエストではなく、JavaScriptのリクエストがbook_commentsコントローラに送られる。-->
           <% end %>
        </p>
      </div>
    <% end %>
 </div>
+
+<!--HTMLリクエストの場合→データベースにコメントを保存or削除し、画面にリダイレクトする(ページを読み込む)
+JavaScriptリクエストの場合→データベースにコメントを保存or削除し、JavaScriptを使ってコメント部分のみ更新する(ページ読み込みなし)-->

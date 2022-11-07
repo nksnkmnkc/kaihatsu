@@ -16,7 +16,7 @@
         </td>
         <td><%= link_to book.title,book, class: "book_#{book.id}"  %></td>
         <td><%= book.body %></td>
-      <!--部分テンプレートにした箇所(部分的に更新したい箇所)-->
+      <!--【いいね機能の非同期通信化】部分テンプレートにした箇所(部分的に更新したい箇所)-->
         <td class = "favorite_btn_<%= book.id %>">
         <%= render "favorites/btn", book: book %>
         </td>
