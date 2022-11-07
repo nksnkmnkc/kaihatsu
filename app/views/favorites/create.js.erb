@@ -1,0 +1,5 @@
+// 対象の子要素のhtmlを、カッコ内のものに変更する。
+  $(セレクタ).html();
+  // 対象のvalueを、カッコ内のものに変更する。
+  $(セレクタ).val();//インスタンス変数は、favorites_controllerのcreateアクションで定義されたものが使用できます。
+$(".favorite-btn").html("<%= escape_javascript(render partial: 'favorites/btn', locals: {book: @book}) %>");

@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
  before_action :authenticate_user!
+ #↓他人の編集画面に遷移しないようにする記述
  before_action :ensure_correct_user, only: [:edit, :update]
 
   def new

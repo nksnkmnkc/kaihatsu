@@ -1,0 +1,6 @@
+// 対象の子要素のhtmlを、カッコ内のものに変更する。
+  $(セレクタ).html();
+  // 対象のvalueを、カッコ内のものに変更する。
+  $(セレクタ).val();
+// 以下の記述でも同じ挙動をする。html()以降では部分テンプレートを呼び出しています。
+$(".favorite-btn").html("<%= j(render 'favorites/favorite-btn', book: @book) %>");
