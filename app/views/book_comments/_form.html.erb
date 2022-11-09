@@ -1,6 +1,6 @@
 <%= form_with( model: [book, book_comment], local: false ) do |f| %>
   <%= f.text_area :comment, rows:"5", class: "w-100 comment-textarea" %><br>
-  <%= f.submit "送信", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
+  <%= f.submit "送信" %>
 <% end %>
 <!--form_withで、JavaScriptのAjaxという技術を使用した非同期通信を行なうためには
     local: falseというオプションを記述する必要がある。
