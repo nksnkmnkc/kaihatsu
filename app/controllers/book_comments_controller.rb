@@ -1,20 +1,18 @@
 class BookCommentsController < ApplicationController
 
  def create
-    @book = Book.find(params[:book_id])
-    @book_comment = current_user.book_comments.new(book_comment_params)
-    @book_comment.book_id = @book.id
-    @book_comment.save
-    @book_comment = BookComment.new
+    book = Book.find(params[:book_id])
+    @comment = current_user.book_comments.new(book_comment_params)
+    @comment.book_id = book.id
+    @comment.save
     #わたす値→booksのshowページからrenderしてるので、同じ値渡せば良い。
     #create.js.erbで@books @book_commentを渡しているため、book_comments_controllerでこの値を定義する必要がある。
  end
 
  def destroy
     @book = Book.find(params[:book_id])
-    @book_comment = BookComment.find_by(id: params[:id], book_id: params[:book_id])
-    @book_comment.destroy
-    @book_comment = BookComment.new
+    @comment = BookComment.find_by(id: params[:id], book_id: params[:book_id])
+    @comment.destroy
     #わたす値→booksのshowページからrenderしてるので、同じ値渡せば良い。
     #destroy.js.erbで@books @book_commentを渡しているため、book_comments_controllerでこの値を定義。
  end

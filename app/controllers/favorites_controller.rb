@@ -15,4 +15,4 @@ end
 
 # redirect_back(fallback_location: root_path)→削除
 #リダイレクト先を削除→リダイレクト先がない、かつJavaScriptリクエストという状況になる
-# →createアクション実行後は、create.js.erbファイルを、destroyアクション実行後はdestroy.js.erbファイルを探すようになる。
+#  →createアクション実行後は、create.js.erbファイルを、destroyアクション実行後はdestroy.js.erbファイルを探すようになる。

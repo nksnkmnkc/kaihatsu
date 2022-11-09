@@ -18,9 +18,9 @@
         <td><%= book.body %></td>
       <!--【いいね機能の非同期通信化】部分テンプレートにした箇所(部分的に更新したい箇所)-->
         <td class = "favorite_btn_<%= book.id %>">
-        <%= render "favorites/btn", book: book %>
+          <%= render "favorites/btn", book: book %>
         </td>
-        <td>コメント数：<%= book.book_comments.count %></td>
+        <td><%= render "book_comments/counter", book: book %></td>
       </tr>
     <% end %>
 </table>
